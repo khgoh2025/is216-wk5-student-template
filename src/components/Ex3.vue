@@ -8,8 +8,24 @@ const selectedOp = ref("+")
 
 // TODO: Add Code Here
 // Note: DO NOT USE "eval()". In security, "eval" is considered "evil"!!!
+const result = computed(() => {
+    if (selectedOp.value === "+"){
+        return x.value + y.value
+    }
+    else if (selectedOp.value === "-"){
+        return x.value - y.value
+    }
+    else if (selectedOp.value === "*"){
+        return x.value * y.value
+    }
+    else if (selectedOp.value === "/"){
+        return x.value / y.value
+    }
+    else {
+        return x.value % y.value
+    }
+})
 
-    
 </script>
 
 <template>
