@@ -29,11 +29,11 @@ function addItem(){
     <h2>Shopping Cart</h2>
     <!-- TODO: Add Code Here -->
 
-    <ul v-for="item in items" v-bind:key="item">
-        <li>{{ item }}
+    <ul> <!--You need to put the v-for in the <li> as that is the one that is getting repeated-->
+        <li v-for="item in items" v-bind:key="item">{{ item }}
             <button v-on:click="deleteItem(item)">Delete!</button>
         </li>
     </ul>
-    <input v-model="chosenItem" type="text">
-    <button v-on:click="addItem(chosenItem)">Add!</button>
+    <input v-model="chosenItem" v-on:keydown.enter="addItem()" type="text">
+    <button v-on:click="addItem()">Add!</button>
 </template>
